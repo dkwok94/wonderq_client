@@ -15,7 +15,7 @@ class App extends Component {
 
 // Updates the messageQueue in the state of the application
   updateQueue = () => {
-    fetch('http://localhost:3000/display_messages', {
+    fetch('https://wonderq-server-dkwok94.herokuapp.com/display_messages', {
       method: 'get',
       headers: {'Content-Type': 'application/json'}
     })
@@ -42,7 +42,7 @@ class App extends Component {
 
   // Handles the creation of messages through the API, sends the message in the request body, and updates the queue state
   handleProducer = () => {
-    fetch('http://localhost:3000/new_message', {
+    fetch('https://wonderq-server-dkwok94.herokuapp.com/new_message', {
       method: 'post',
       headers: {'Content-Type': 'application/json'},
       body: JSON.stringify({
@@ -57,7 +57,7 @@ class App extends Component {
 
   // Handles the consumption of the first message in the queue and updates the queue state
   handleConsumer = () => {
-    fetch('http://localhost:3000/consume_message', {
+    fetch('https://wonderq-server-dkwok94.herokuapp.com/consume_message', {
       method: 'delete',
       headers: {'Content-Type': 'application/json'}
     }).then(() => {
